@@ -169,3 +169,31 @@ RegisterNetEvent('rsg-essentials:client:pvpToggle',function()
     lib.notify({ title = locale('cl_pvp_toggle_on'), type = 'info', icon = 'fa-solid fa-shield', iconAnimation = 'shake', duration = 7000 })
 
 end)
+
+-- while on horse hold right mouse A OR D for left and right and space at same time
+Citizen.CreateThread(function()
+    local wasOnMount = false
+    while true do
+        Citizen.Wait(0)
+        local ped = PlayerPedId()
+        local isOnMount = IsPedOnMount(ped)
+        
+        -- Automatically activate when mounted
+        if isOnMount then
+            if not wasOnMount then
+                -- Player just mounted, activate the feature
+                SetPedConfigFlag(ped, 560, true)
+                wasOnMount = true
+            end
+            
+            -- Safety check: keep flag active while mounted
+            if not IsPedConfigFlagSet(ped, 560) then
+                SetPedConfigFlag(ped, 560, true)
+            end
+        elseif wasOnMount then
+            -- Player dismounted, deactivate the feature
+            SetPedConfigFlag(ped, 560, false)
+            wasOnMount = false
+        end
+    end
+end)

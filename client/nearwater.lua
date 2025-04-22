@@ -64,7 +64,6 @@ CreateThread(function()
 
         for k,v in pairs(Config.WaterTypes) do
             if water == Config.WaterTypes[k]["waterhash"] then
-                
                 -- wash
                 local Wash = CreateVarString(10, 'LITERAL_STRING', Config.WaterTypes[k]["name"])
                 PromptSetActiveGroupThisFrame(RiverGroup, Wash)
@@ -79,13 +78,13 @@ CreateThread(function()
                 if PromptHasHoldModeCompleted(DrinkPromp) then
                     TriggerEvent('rsg-river:client:drink')
                 end
-                
+
                 sleep = 4
                 break
             end
         end
 
-        ::continue::
+    ::continue::
     end
 end)
 
@@ -151,7 +150,7 @@ if Config.Debug == true then
             Wait(1)
             local coords = GetEntityCoords(cache.ped)
             local water = GetWaterMapZoneAtCoords(coords.x+3, coords.y+3, coords.z)
-        
+
             print("water: "..tostring(water))
             Wait(5000)
         end
