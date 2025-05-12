@@ -52,9 +52,9 @@ Config.Discord = {
 }
 
 -- discord webhook config
-Config.DiscordWHImage = 'https://servers-frontend.fivem.net/api/servers/icon/7akemb/-360312002.png'
-Config.DiscordWHLogUserName = 'HDRP Gaming Logs'
-Config.DiscordWHAuthorName = 'HDRP Gaming'
+Config.DiscordWHImage = 'https://cdn.discordapp.com/attachments/1032260791669375006/1066811751389208596/rsg256x256.png'
+Config.DiscordWHLogUserName = 'Gaming Logs'
+Config.DiscordWHAuthorName = 'Gaming'
 
 -- density config
 Config.Density = {

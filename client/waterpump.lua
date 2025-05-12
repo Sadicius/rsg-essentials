@@ -50,7 +50,6 @@ RegisterNetEvent('rsg-waterpump:client:canteenfill', function()
             LocalPlayer.state:set('inv_busy', true, true)
             SetCurrentPedWeapon(cache.ped, joaat('weapon_unarmed'))
             Wait(100)
-            
             if lib.progressBar({
                 duration = 15000,
                 position = 'bottom',
@@ -74,7 +73,6 @@ end)
 RegisterNetEvent('rsg-waterpump:client:drinking', function()
     SetCurrentPedWeapon(cache.ped, joaat('weapon_unarmed'))
     Wait(100)
-    
     if not IsPedOnMount(cache.ped) and not IsPedInAnyVehicle(cache.ped) then
         if lib.progressBar({
             duration = 7000,

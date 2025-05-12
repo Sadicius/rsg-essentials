@@ -34,7 +34,9 @@ if Config.EnableXmas == true then
 end
 
 AddEventHandler('onResourceStop', function(resource)
-    if GetCurrentResourceName() ~= resource then return end
+    if GetCurrentResourceName() ~= resource then
+        return
+    end
     exports.weathersync:resetWeatherPattern()
     exports.weathersync:resetWeather()
 end)
